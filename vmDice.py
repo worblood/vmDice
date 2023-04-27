@@ -21,7 +21,7 @@ dice = []
 list.clear(dice)
 
 def roll_dice():
-
+    dice.clear()
     diceBlackAmount = int(black_amount_entry.get()) # Hente verdien fra input-feltet for antall svarte terninger
     diceRedAmount = int(red_amount_entry.get()) # Hente verdien fra input-feltet for antall røde terninger
 
@@ -104,10 +104,8 @@ def roll_dice():
                 diceText3.pack(anchor='c')
 
     # slette gamle bilder fra listen og oppdatere med nye
-    def clear_frame2():
-        for widgets in frame2.winfo_children():
-            widgets.destroy()
-    clear_frame2()
+    for widgets in frame2.winfo_children():
+        widgets.destroy()
     frame2.after(10, update_gui)
 
 frame1 = Frame(root)
